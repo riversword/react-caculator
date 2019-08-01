@@ -1,0 +1,67 @@
+
+*{
+  box-sizing: border-box;
+}
+.app {
+  background: #68E1E6;
+}
+
+.display-screen {
+  width: 400px;
+  min-height: 160px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+
+  .input {
+    text-align: left;
+    font-size: 18px;
+    color: #222222;
+  }
+
+  .result {
+    text-align: right;
+    font-size: 38px;
+    color: black;
+  }
+}
+
+.keyboard-container {
+  text-align: center;
+  color: white;
+  .keyboard {
+    width: 450px;
+    padding: 0 25px 0;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 115px 115px 115px 115px 115px;
+  
+    // border:  1px solid black;
+    background: #00A8A7;
+
+    .keyboard-btn {
+      // border: 1px solid black;
+      line-height: 115px;
+    }
+  }
+  
+  .btn-equal {
+    width: 400px;
+    height: 92px;
+    line-height: 92px;
+    margin: 0 auto;
+    background: #FF844A;
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
