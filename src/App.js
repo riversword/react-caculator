@@ -1,39 +1,26 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import DisplayScreen from './components/DisplayScreen/index.js';
-import Keyboard from './components/Keyboard/index.js';
+import UseStore from './pages/UseStore.js';
+import UseState from './pages/UseState.js';
 import './App.less';
+import {HashRouter , Route , Link, Switch} from 'react-router-dom';
 
 const App = (props) => {
-  const {
-    input,
-    result,
-    clickBtn
-  } = props;
 
   return (
     <div className="app">
-      <DisplayScreen input={input} result={result} clickBtn={clickBtn}/>
-      <Keyboard clickBtn={clickBtn}/>
+      <HashRouter>
+        <div>
+          <Link className={'link'} to="/">to store</Link>
+          <Link className={'link'} to="/state">to state</Link>
+          <Switch>
+          {/* exact={true} 精确匹配路由 */}
+            <Route exact={true} path="/" component={UseStore}/>
+            <Route path="/state" component={UseState}/>
+          </Switch>
+        </div>
+      </HashRouter>
     </div>
-  );
+  )
 };
 
-const mapStateToProps = (state) => {
-  return state;
-};
-
-const mapReducerToProps = (dispatch) => {
-  return {
-    clickBtn(e) {
-      const str = e.target.innerHTML;
-      const action = {
-        type: 'click_btn',
-        btnContent: str
-      };
-      dispatch(action);
-    }
-  }
-};
-
-export default connect(mapStateToProps, mapReducerToProps)(App);
+export default App;
