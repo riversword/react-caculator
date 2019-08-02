@@ -1,12 +1,13 @@
 import React from 'react';
+import './style.less';
 
 const Keyboard = (props) => {
 	const btns = [
-		'C', '%', 'M', '^',
+		'AC', 'DEL', '%', '^',
 		'7', '8', '9', '+',
 		'4', '5', '6', '-',
 		'1', '2', '3', '×',
-		'0', 'oo', '.', '÷' 
+		'0', 'ANS', '.', '÷'
 	];
 	const clickBtn = props.clickBtn;
     return (
@@ -20,7 +21,7 @@ const Keyboard = (props) => {
 					})
 				}
 			</div>
-			<div className={'btn-equal'}>=</div>
+			{/* <div className={'btn-equal'}>=</div> */}
 		</div>
     )
 }
