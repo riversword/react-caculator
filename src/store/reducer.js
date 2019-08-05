@@ -275,14 +275,6 @@ export default (state = defaultState, action) => {
 						newState.input += newState.input2;
 					}
 
-					/*
-					if (caculate(newState.input) !== 'error') {
-						newState.result = caculate(newState.input); // 计算前面的表达式
-					}
-					newState.input += action.btnContent;
-					newState.input2 = newState.result;
-					*/
-
 					newState.input2 = getBracketValue(newState.input);
 					newState.input += action.btnContent;
 				}
@@ -290,4 +282,4 @@ export default (state = defaultState, action) => {
 			}
     }
     return newState;
-} 
+}
